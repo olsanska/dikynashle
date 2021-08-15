@@ -1,1 +1,0 @@
-Diky nashle
