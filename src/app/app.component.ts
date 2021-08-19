@@ -1,6 +1,6 @@
-import { Component, OnInit } from '@angular/core';
-import { Subject, Observable } from 'rxjs';
-import { WebcamImage, WebcamInitError, WebcamUtil } from 'ngx-webcam';
+import {Component, OnInit, Pipe, PipeTransform} from '@angular/core';
+import {Subject, Observable, Subscription, timer} from 'rxjs';
+import {WebcamImage, WebcamInitError, WebcamUtil} from 'ngx-webcam';
 
 @Component({
   selector: 'app-root',
@@ -8,28 +8,34 @@ import { WebcamImage, WebcamInitError, WebcamUtil } from 'ngx-webcam';
   styleUrls: ['./app.component.scss']
 })
 export class AppComponent implements OnInit {
-  // toggle webcam on/off
+
+  get countDown(): Subscription {
+    return this._countDown;
+  }
+
+  set countDown(value: Subscription) {
+    this._countDown = value;
+  }
+
   public windowWidth = 500;
   public windowHeight = 500;
   public showWebcam = true;
   public allowCameraSwitch = true;
   public multipleWebcamsAvailable = false;
-  // public deviceId: string | boolean;
   public videoOptions: MediaTrackConstraints = {
     width: {ideal: 1024},
     height: {ideal: 812}
   };
   public errors: WebcamInitError[] = [];
 
-  // latest snapshot
+  private _countDown!: Subscription;
+  counter = 900;
+  tick = 1000;
+
   public webcamImage: WebcamImage | undefined;
 
-  // webcam snapshot trigger
   private trigger: Subject<void> = new Subject<void>();
-  // switch to next / previous / specific webcam; true/false: forward/backwards, string: deviceId
-  private nextWebcam: Subject<boolean | string> = new Subject<
-    boolean | string
-  >();
+  private nextWebcam: Subject<boolean | string> = new Subject<boolean | string>();
 
   public ngOnInit(): void {
     this.windowWidth = window.innerWidth;
@@ -43,6 +49,8 @@ export class AppComponent implements OnInit {
         this.multipleWebcamsAvailable = mediaDevices && mediaDevices.length > 1;
       }
     );
+
+    this._countDown = timer(0, this.tick).subscribe(() => --this.counter);
   }
 
   public triggerSnapshot(): void {
@@ -58,9 +66,6 @@ export class AppComponent implements OnInit {
   }
 
   public showNextWebcam(directionOrDeviceId: boolean | string): void {
-    // true => move forward through devices
-    // false => move backwards through devices
-    // string => move to device with given deviceId
     this.nextWebcam.next(directionOrDeviceId);
   }
 
@@ -69,16 +74,27 @@ export class AppComponent implements OnInit {
     this.webcamImage = webcamImage;
   }
 
-  // public cameraWasSwitched(deviceId: string): void {
-  //   console.log('active device: ' + deviceId);
-  //   this.deviceId = deviceId;
-  // }
-
   public get triggerObservable(): Observable<void> {
     return this.trigger.asObservable();
   }
 
   public get nextWebcamObservable(): Observable<boolean | string> {
     return this.nextWebcam.asObservable();
+  }
+}
+
+@Pipe({
+  name: "formatTime"
+})
+export class FormatTimePipe implements PipeTransform {
+  transform(value: number): string {
+    const minutes: number = Math.floor(value / 60);
+    return (
+      "1 : " +
+      ("00" + minutes).slice(-2) +
+      " : " +
+      ("00" + Math.floor(value - minutes * 60)).slice(-2)
+
+    );
   }
 }

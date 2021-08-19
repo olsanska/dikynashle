@@ -1,6 +1,21 @@
+$base-yellow: #f3d247;
+$green-dark: #417223;
+$green-light: #62A130;
+$base-red: #BC2B24;
+$fare-height: 5rem;
+$box-size: 8rem;
+
 * {
   margin: 0;
   padding: 0;
+
+  &::-webkit-scrollbar {
+    display: none;
+  }
+
+  /* Hide scrollbar for IE, Edge and Firefox */
+  -ms-overflow-style: none; /* IE and Edge */
+  scrollbar-width: none; /* Firefox */
 }
 
 :host {
@@ -14,25 +29,140 @@
   display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: center;
+  justify-content: space-between;
+
+  position: relative;
+
+  .sbox {
+    position: absolute;
+    top: 40%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: cornflowerblue;
+    opacity: .4;
+    width: $box-size;
+    height: $box-size;
+    text-align: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    font-size: 4rem;
+  }
 }
 
 .header {
   height: 4rem;
   width: 100%;
-  background-color: #f3d247;
-  text-align: center
+  background-color: $base-yellow;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  position: relative;
 
-  &__title {
+  .hamburger {
+    background-color: $base-red;
+    border-radius: 100%;
+    width: 2rem;
+    height: 2rem;
+    position: absolute;
+    left: 1rem;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    .menu {
+      color: #f3d247;
+    }
+  }
+
+  .title {
     color: #BC2B24;
+  }
+
+  .progressbar {
+    height: 10px;
+    background-color: green;
+    width: 100%;
+    position: absolute;
+    bottom: -10px;
   }
 }
 
-// f3d247
+.footer {
+  height: 10rem;
+  width: 100%;
+  background-color: $green-dark;
+  text-align: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  position: relative;
+  bottom: $fare-height;
 
-// .webcamContainer {
-//   display: flex;
-//   flex-direction: column;
-//   align-items: center;
-//   justify-content: center;
-// }
+  .type {
+    padding: 0 1rem;
+    position: absolute;
+    background-color: $green-light;
+    width: 50%;
+    height: 4rem;
+    top: -4rem;
+    left: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: $base-yellow;
+    border-top-right-radius: 5px;
+  }
+
+  .time {
+    color: white;
+    font-size: 4rem;
+    padding: 0 .5rem;
+  }
+
+  .time-names {
+    padding: 0 1rem;
+    display: flex;
+    align-items: center;
+    color: white;
+    justify-content: space-between;
+    font-weight: 100;
+    font-size: 12px;
+  }
+}
+
+.fare {
+  background-color: $base-yellow;
+  height: 5rem;
+  width: 100%;
+  position: absolute;
+  bottom: 0;
+  color: $base-red;
+  padding-left: 2rem;
+
+  display: flex;
+  align-items: center;
+
+  .fare-num {
+    background-color: $base-red;
+    border-radius: 100%;
+    width: 2.5rem;
+    height: 2.5rem;
+    margin-right: 1rem;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: $base-yellow;
+  }
+}
+
+.webcamContainer {
+  overflow: hidden;
+}
+

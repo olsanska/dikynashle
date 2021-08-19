@@ -1,19 +1,51 @@
 <div class="app">
+
   <div class="header">
-    <h1 class="header__title">MY TICKET</h1>
+    <!--    <div>-->
+    <div class="hamburger">
+      <mat-icon class="menu" aria-hidden="false" aria-label="Example home icon">menu</mat-icon>
+    </div>
+    <h1 class="title">MY TICKET</h1>
+    <!--    </div>-->
+    <div class="progressbar"></div>
   </div>
-  <!-- <h1>🚀</h1> -->
+
   <div class="webcamContainer">
-  <webcam
-    class="webcam"
-    [height]="windowHeight"
-    [width]="windowWidth"
-    [trigger]="triggerObservable"
-    (imageCapture)="handleImage($event)"
-    *ngIf="showWebcam"
-    [allowCameraSwitch]="allowCameraSwitch"
-    [videoOptions]="videoOptions"
-    [imageQuality]="1">
-  </webcam>
+    <webcam
+      class="webcam"
+      [height]="windowHeight"
+      [width]="windowWidth"
+      [trigger]="triggerObservable"
+      (imageCapture)="handleImage($event)"
+      *ngIf="showWebcam"
+      [allowCameraSwitch]="allowCameraSwitch"
+      [videoOptions]="videoOptions"
+      [imageQuality]="1">
+    </webcam>
+  </div>
+
+  <div class="sbox">
+    <h2>S</h2>
+  </div>
+
+  <div class="footer">
+    <div class="type">
+      <h2>GENERAL TICKET</h2>
+    </div>
+    <div>
+      <h1 class="time">{{ counter | formatTime }}</h1>
+      <div class="time-names">
+        <p>HOURS</p>
+        <p>MINUTES</p>
+        <p>SECONDS</p>
+      </div>
+    </div>
+  </div>
+
+  <div class="fare">
+    <div class="fare-num">
+      <h1>1</h1>
+    </div>
+    <h2>DISCOUNT FARE</h2>
   </div>
 </div>
