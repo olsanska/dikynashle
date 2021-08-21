@@ -2,6 +2,12 @@ import {Component, OnInit, Pipe, PipeTransform} from '@angular/core';
 import {Subject, Observable, Subscription, timer} from 'rxjs';
 import {WebcamImage, WebcamInitError, WebcamUtil} from 'ngx-webcam';
 
+// ng build --prod --base-href "https://olsanska.github.io/dikynashle/"
+// ngh --dir dist/dikynashle
+// https://olsanska.github.io/dikynashle/
+
+// http-server -p 8080 -c-1 dist/dikynashle
+
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
@@ -20,7 +26,7 @@ export class AppComponent implements OnInit {
   public windowWidth = 500;
   public windowHeight = 500;
   public showWebcam = true;
-  public allowCameraSwitch = true;
+  public allowCameraSwitch = false;
   public multipleWebcamsAvailable = false;
   public videoOptions: MediaTrackConstraints = {
     width: {ideal: 1024},
