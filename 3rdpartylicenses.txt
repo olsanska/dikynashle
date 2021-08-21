@@ -63,6 +63,9 @@ MIT
 @angular/router
 MIT
 
+@angular/service-worker
+MIT
+
 ngx-webcam
 MIT
 MIT License
