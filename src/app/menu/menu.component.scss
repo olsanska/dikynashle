@@ -1,0 +1,32 @@
+@import "src/styles.scss";
+
+.sidebar {
+  padding: 1rem;
+  color: $base-red;
+  background-color: $base-yellow;
+
+  .header {
+    display: flex;
+    justify-content: space-between;
+  }
+
+  .hamburger {
+    cursor: pointer;
+    background-color: $base-red;
+    border-radius: 100%;
+    width: 2rem;
+    height: 2rem;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    .menu {
+      color: #f3d247;
+    }
+  }
+
+  .row {
+    padding: 1rem 0;
+  }
+}

@@ -1,4 +1,6 @@
-import { Component, OnInit } from '@angular/core';
+import {EventEmitter, Inject} from '@angular/core';
+import {Component, OnInit, Output} from '@angular/core';
+import {MAT_BOTTOM_SHEET_DATA, MatBottomSheetRef} from "@angular/material/bottom-sheet";
 
 @Component({
   selector: 'app-menu',
@@ -7,7 +9,15 @@ import { Component, OnInit } from '@angular/core';
 })
 export class MenuComponent implements OnInit {
 
-  constructor() { }
+  @Output() public closeMenuEvent = new EventEmitter();
+
+  public closeMenu() {
+    this.closeMenuEvent.emit();
+  }
+
+  public downloadApp() {
+
+  }
 
   ngOnInit(): void {
   }

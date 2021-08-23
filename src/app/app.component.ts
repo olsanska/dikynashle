@@ -2,6 +2,7 @@ import {AfterViewInit, Component, OnInit, Pipe, PipeTransform} from '@angular/co
 import {Subject, Observable, Subscription, timer} from 'rxjs';
 import {WebcamImage, WebcamInitError, WebcamUtil} from 'ngx-webcam';
 import {SwUpdate} from "@angular/service-worker";
+import {animate, state, style, transition, trigger} from '@angular/animations';
 
 // ng build --prod --base-href "https://olsanska.github.io/dikynashle/"
 // ngh --dir dist/dikynashle
@@ -12,18 +13,24 @@ import {SwUpdate} from "@angular/service-worker";
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
-  styleUrls: ['./app.component.scss']
+  styleUrls: ['./app.component.scss'],
+  // animations: [
+  //   trigger('slideInOut', [
+  //     state('in', style({
+  //       transform: 'translate3d(-100%, 0, 0)'
+  //     })),
+  //     state('out', style({
+  //       transform: 'translate3d(100%, 0, 0)'
+  //     })),
+  //     transition('in => out', animate('400ms ease-in-out')),
+  //     transition('out => in', animate('400ms ease-in-out'))
+  //   ]),
+  // ]
 })
 export class AppComponent implements OnInit {
 
-  get countDown(): Subscription {
-    return this._countDown;
-  }
-
-  set countDown(value: Subscription) {
-    this._countDown = value;
-  }
-
+  // menuState:string = 'out';
+  public isMenuOpen = false;
   public windowWidth = 500;
   public windowHeight = 500;
   public showWebcam = true;
@@ -72,6 +79,17 @@ export class AppComponent implements OnInit {
 
     this._countDown = timer(0, this.tick).subscribe(() => --this.counter);
   }
+
+  public openMenu()
+  {
+    this.isMenuOpen = !this.isMenuOpen;
+  }
+
+  // toggleMenu() {
+  //   // 1-line if statement that toggles the value:
+  //   // this.isMenuOpen = !this.isMenuOpen;
+  //   this.menuState = this.menuState === 'out' ? 'in' : 'out';
+  // }
 
   public reloadPage() {
     window.location.reload();

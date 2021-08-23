@@ -33,6 +33,15 @@ $box-size: 8rem;
 
   position: relative;
 
+  .sidebar {
+    position: absolute;
+    width: 25%;
+    height: 100%;
+    background-color: $base-yellow;
+    z-index: 200;
+    left: 0;
+  }
+
   .sbox {
     position: absolute;
     top: 40%;
@@ -63,6 +72,7 @@ $box-size: 8rem;
   position: relative;
 
   .hamburger {
+    cursor: pointer;
     background-color: $base-red;
     border-radius: 100%;
     width: 2rem;
@@ -75,12 +85,12 @@ $box-size: 8rem;
     justify-content: center;
 
     .menu {
-      color: #f3d247;
+      color: $base-yellow;
     }
   }
 
   .title {
-    color: #BC2B24;
+    color: $base-red;
   }
 
   .progressbar {

@@ -1,12 +1,16 @@
 <div class="app">
 
+<!--    [@slideInOut]="menuState"-->
+<!--  <app-menu-->
+<!--    *ngIf="isMenuOpen"-->
+<!--    (closeMenuEvent)="openMenu()"-->
+<!--    class="sidebar"></app-menu>-->
+
   <div class="header">
-    <!--    <div>-->
-    <div class="hamburger">
+    <div class="hamburger" (click)="openMenu()">
       <mat-icon class="menu" aria-hidden="false" aria-label="Example home icon">menu</mat-icon>
     </div>
     <h1 class="title">MY TICKET</h1>
-    <!--    </div>-->
     <div class="progressbar"></div>
   </div>
 
