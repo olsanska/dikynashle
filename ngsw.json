@@ -1,6 +1,6 @@
 {
   "configVersion": 1,
-  "timestamp": 1629743991425,
+  "timestamp": 1629744470345,
   "index": "https://olsanska.github.io/dikynashle/index.html",
   "assetGroups": [
     {
@@ -29,30 +29,16 @@
         "ignoreVary": true
       },
       "urls": [
-        "https://olsanska.github.io/dikynashle/assets/icons/icon-128x128.png",
-        "https://olsanska.github.io/dikynashle/assets/icons/icon-144x144.png",
-        "https://olsanska.github.io/dikynashle/assets/icons/icon-152x152.png",
-        "https://olsanska.github.io/dikynashle/assets/icons/icon-192x192.png",
-        "https://olsanska.github.io/dikynashle/assets/icons/icon-384x384.png",
-        "https://olsanska.github.io/dikynashle/assets/icons/icon-512x512.png",
-        "https://olsanska.github.io/dikynashle/assets/icons/icon-72x72.png",
-        "https://olsanska.github.io/dikynashle/assets/icons/icon-96x96.png"
+        "https://olsanska.github.io/dikynashle/assets/icons/diky.jpeg"
       ],
       "patterns": []
     }
   ],
   "dataGroups": [],
   "hashTable": {
-    "https://olsanska.github.io/dikynashle/assets/icons/icon-128x128.png": "dae3b6ed49bdaf4327b92531d4b5b4a5d30c7532",
-    "https://olsanska.github.io/dikynashle/assets/icons/icon-144x144.png": "b0bd89982e08f9bd2b642928f5391915b74799a7",
-    "https://olsanska.github.io/dikynashle/assets/icons/icon-152x152.png": "7479a9477815dfd9668d60f8b3b2fba709b91310",
-    "https://olsanska.github.io/dikynashle/assets/icons/icon-192x192.png": "1abd80d431a237a853ce38147d8c63752f10933b",
-    "https://olsanska.github.io/dikynashle/assets/icons/icon-384x384.png": "329749cd6393768d3131ed6304c136b1ca05f2fd",
-    "https://olsanska.github.io/dikynashle/assets/icons/icon-512x512.png": "559d9c4318b45a1f2b10596bbb4c960fe521dbcc",
-    "https://olsanska.github.io/dikynashle/assets/icons/icon-72x72.png": "c457e56089a36952cd67156f9996bc4ce54a5ed9",
-    "https://olsanska.github.io/dikynashle/assets/icons/icon-96x96.png": "3914125a4b445bf111c5627875fc190f560daa41",
+    "https://olsanska.github.io/dikynashle/assets/icons/diky.jpeg": "bb9e34142e00b1fcd111674532448300e5ee1fb5",
     "https://olsanska.github.io/dikynashle/favicon.ico": "22f6a4a3bcaafafb0254e0f2fa4ceb89e505e8b2",
-    "https://olsanska.github.io/dikynashle/index.html": "b2daf95f4bd7a9e932ed052cfe028936401e5159",
+    "https://olsanska.github.io/dikynashle/index.html": "4266b79c004ffb1519fc1971178022eb106ec46a",
     "https://olsanska.github.io/dikynashle/main.bab7dbbf029225542487.js": "cdaa65ebfaae4922c087fa1fd58dc02304b83f49",
     "https://olsanska.github.io/dikynashle/manifest.webmanifest": "0d1c4385873f5d3f68d39344bf9ba8c5f7328ba6",
     "https://olsanska.github.io/dikynashle/polyfills.41e70cb31dd9576a8987.js": "9f3017e9eff07d5132d124aa50ce26cf0a73d962",
