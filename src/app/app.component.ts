@@ -1,6 +1,7 @@
-import {Component, OnInit, Pipe, PipeTransform} from '@angular/core';
+import {AfterViewInit, Component, OnInit, Pipe, PipeTransform} from '@angular/core';
 import {Subject, Observable, Subscription, timer} from 'rxjs';
 import {WebcamImage, WebcamInitError, WebcamUtil} from 'ngx-webcam';
+import {SwUpdate} from "@angular/service-worker";
 
 // ng build --prod --base-href "https://olsanska.github.io/dikynashle/"
 // ngh --dir dist/dikynashle
@@ -43,9 +44,22 @@ export class AppComponent implements OnInit {
   private trigger: Subject<void> = new Subject<void>();
   private nextWebcam: Subject<boolean | string> = new Subject<boolean | string>();
 
+  constructor(private swUpdate: SwUpdate) {}
+
   public ngOnInit(): void {
     this.windowWidth = window.innerWidth;
     this.windowHeight = window.innerHeight;
+
+    if (this.swUpdate.isEnabled) {
+
+      this.swUpdate.available.subscribe(() => {
+
+        if(confirm("New version available. Load New Version?")) {
+
+          window.location.reload();
+        }
+      });
+    }
 
     console.log(this.windowHeight);
     console.log(this.windowWidth);

@@ -11,6 +11,7 @@ import { PromptComponent } from './prompt-component/prompt-component.component';
 import { MatToolbarModule } from '@angular/material/toolbar';
 import {PwaService} from "./pwa.service";
 import {MatButtonModule} from "@angular/material/button";
+import { HttpClientModule } from '@angular/common/http';
 
 const initializer = (pwaService: PwaService) => () => pwaService.initPwaPrompt();
 
@@ -28,11 +29,13 @@ const initializer = (pwaService: PwaService) => () => pwaService.initPwaPrompt()
     MatIconModule,
     MatToolbarModule,
     MatButtonModule,
+    HttpClientModule,
     ServiceWorkerModule.register('ngsw-worker.js', {
       enabled: environment.production,
+      registrationStrategy: 'registerImmediately'
       // Register the ServiceWorker as soon as the app is stable
       // or after 30 seconds (whichever comes first).
-      registrationStrategy: 'registerWhenStable:30000'
+      // registrationStrategy: 'registerWhenStable:30000'
     })
   ],
   exports: [
@@ -42,7 +45,7 @@ const initializer = (pwaService: PwaService) => () => pwaService.initPwaPrompt()
     MatButtonModule
   ],
   providers: [
-    {provide: APP_INITIALIZER, useFactory: initializer, deps: [PwaService], multi: true},
+    // {provide: APP_INITIALIZER, useFactory: initializer, deps: [PwaService], multi: true},
   ],
   bootstrap: [AppComponent]
 })
