@@ -12,6 +12,7 @@ import { MatToolbarModule } from '@angular/material/toolbar';
 import {PwaService} from "./pwa.service";
 import {MatButtonModule} from "@angular/material/button";
 import { HttpClientModule } from '@angular/common/http';
+import { MenuComponent } from './menu/menu.component';
 
 const initializer = (pwaService: PwaService) => () => pwaService.initPwaPrompt();
 
@@ -20,6 +21,7 @@ const initializer = (pwaService: PwaService) => () => pwaService.initPwaPrompt()
     AppComponent,
     FormatTimePipe,
     PromptComponent,
+    MenuComponent,
   ],
   imports: [
     BrowserModule,

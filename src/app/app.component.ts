@@ -73,6 +73,10 @@ export class AppComponent implements OnInit {
     this._countDown = timer(0, this.tick).subscribe(() => --this.counter);
   }
 
+  public reloadPage() {
+    window.location.reload();
+  }
+
   public triggerSnapshot(): void {
     this.trigger.next();
   }
