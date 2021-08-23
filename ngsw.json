@@ -1,6 +1,6 @@
 {
   "configVersion": 1,
-  "timestamp": 1629663826705,
+  "timestamp": 1629743991425,
   "index": "https://olsanska.github.io/dikynashle/index.html",
   "assetGroups": [
     {
@@ -13,7 +13,7 @@
       "urls": [
         "https://olsanska.github.io/dikynashle/favicon.ico",
         "https://olsanska.github.io/dikynashle/index.html",
-        "https://olsanska.github.io/dikynashle/main.ffcde5464efa65eb8c8f.js",
+        "https://olsanska.github.io/dikynashle/main.bab7dbbf029225542487.js",
         "https://olsanska.github.io/dikynashle/manifest.webmanifest",
         "https://olsanska.github.io/dikynashle/polyfills.41e70cb31dd9576a8987.js",
         "https://olsanska.github.io/dikynashle/runtime.719204c66e1498ae9e44.js",
@@ -52,8 +52,8 @@
     "https://olsanska.github.io/dikynashle/assets/icons/icon-72x72.png": "c457e56089a36952cd67156f9996bc4ce54a5ed9",
     "https://olsanska.github.io/dikynashle/assets/icons/icon-96x96.png": "3914125a4b445bf111c5627875fc190f560daa41",
     "https://olsanska.github.io/dikynashle/favicon.ico": "22f6a4a3bcaafafb0254e0f2fa4ceb89e505e8b2",
-    "https://olsanska.github.io/dikynashle/index.html": "c607bf1f73c3d7eb20af14e77190d3ddbe135c89",
-    "https://olsanska.github.io/dikynashle/main.ffcde5464efa65eb8c8f.js": "06e934406e3ea9ea5e00f942008c16dcd753e807",
+    "https://olsanska.github.io/dikynashle/index.html": "b2daf95f4bd7a9e932ed052cfe028936401e5159",
+    "https://olsanska.github.io/dikynashle/main.bab7dbbf029225542487.js": "cdaa65ebfaae4922c087fa1fd58dc02304b83f49",
     "https://olsanska.github.io/dikynashle/manifest.webmanifest": "0d1c4385873f5d3f68d39344bf9ba8c5f7328ba6",
     "https://olsanska.github.io/dikynashle/polyfills.41e70cb31dd9576a8987.js": "9f3017e9eff07d5132d124aa50ce26cf0a73d962",
     "https://olsanska.github.io/dikynashle/runtime.719204c66e1498ae9e44.js": "ede034a8502b8aa028904144d9414e6589c160d6",
