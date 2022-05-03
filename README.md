@@ -1,1 +1,1 @@
-🔥
+Made for education purposes
